@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import Spoiler from "./Spoiler";
 
 function Text(){

@@ -18,10 +18,12 @@ function Task(probs: TaskProbs){
         probs.onDelete(probs.id);
     }
 
-    return <div className="flex">
-        <input type="checkbox" onChange={handleCheckBox}/>
-        <div className={taskClass}>{probs.children}</div>
-        <button onClick={deleteTask}>x</button>
+    return <div className="flex justify-between bg-slate-300 pl-5 py-2" >
+        <div className="flex">
+            <input type="checkbox" onChange={handleCheckBox}/>
+            <div className={`${taskClass} pl-3`}>{probs.children}</div>
+        </div>
+        <button className="p" onClick={deleteTask}>❌</button>
     </div>
 }
 

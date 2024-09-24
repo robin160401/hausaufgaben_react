@@ -16,7 +16,7 @@ function GetTasks(){
             (event) => {
                 setTask(event.target.value);
             }
-        } className="border-2 border-black" type="text" value={task}/>
+        } className="border-2 border-black w-full" type="text" value={task}/>
         <button className="border-2 border-black" type="submit">Submit</button>
     </form>
 }

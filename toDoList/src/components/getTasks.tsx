@@ -3,7 +3,7 @@ import { useState } from "react";
 function GetTasks(){
     const [task, setTask] = useState("");
 
-    const handleSubmit: React.FormEventHandler<HTMLFormElement> = () => {
+    const handleSubmit: React.FormEventHandler<HTMLFormElement> = (task) => {
         const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
         tasks.push(task);
         localStorage.setItem("tasks", JSON.stringify(tasks))

@@ -1,3 +1,4 @@
+
 import fetchData from "../functions/fetchFunction";
 import News from "../interfaces/News";
 import NewsCard from "./NewsCard";
@@ -10,8 +11,7 @@ interface RenderNewsCardsProps {
 function RenderNewsCards(props: RenderNewsCardsProps){
     const news: News[] = fetchData(props.getSearchfor, props.getLanguage);
 
-    const filteredNews: News[] = news.filter(el => (el.author !== null && el.urlToImage !== null))
-    console.log(filteredNews)
+    const filteredNews: News[] = news.filter(el =>(el.urlToImage !== null))
     return (
         <div>
             {news.length > 0 ? (

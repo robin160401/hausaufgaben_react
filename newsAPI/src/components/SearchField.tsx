@@ -14,7 +14,8 @@ function SearchField(){
     return <div>
         <form onSubmit={handleSubmit}>
             <input type="text" onChange={
-                (event) => {setSearchFor(event.target.value);
+                (event) => {
+                    setSearchFor(event.target.value);
                     setSubmit(false);
                 }
             } />

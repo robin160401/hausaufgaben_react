@@ -10,6 +10,7 @@ export interface Beers {
 export async function fetchBeers(): Promise<Beers[]>{
     const response = await fetch("https://ih-beers-api2.herokuapp.com/beers");
     const json = (await response.json()) as Beers[];
+    console.log(json)
     return json;
 }
 

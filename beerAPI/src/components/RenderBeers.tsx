@@ -1,26 +1,26 @@
-import { useEffect, useState } from "react"
 import { Beers, fetchBeers } from "../functions/fetchBeers";
 import BeerCard from "./BeerCard";
+import { useQuery } from "@tanstack/react-query";
 
 function RenderBeers(){
-    const [beers, setBeers] = useState<Beers[]>([])
 
+    const beerQuery = useQuery<Beers[]>({ queryKey: ["beers"],
+        queryFn: fetchBeers,
+    });
 
-    useEffect(() => {
-        // (async () => {
-        //     setBeers(await fetchBeers());         Iife
-        // })()
+    console.log(beerQuery.data)
 
-        fetchBeers().then(setBeers)
+    if (beerQuery.isError){ return "Oooopsies" }; 
 
-    }, [])
+    if (beerQuery.isLoading){ return "Loading..." }
     
     return <div>
-        {beers.map((beer: Beers) => (<BeerCard key={beer.name} image_url={beer.image_url}
+        {beerQuery.data.map((beer: Beers) => { return <BeerCard key={beer.name}
+        image_url={beer.image_url}
         name={beer.name}
         tagline={beer.tagline}
         contributed_by={beer.contributed_by}
-        />))}
+        />})}
     </div>
 }
 

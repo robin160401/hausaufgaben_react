@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
 import { Beers } from "../functions/fetchBeers";
 
 function BeerCard(props: Beers){
     return <div>
-        <img src={props.image_url} alt="" />
+        <Link to={`/${props.name}`}>
+            <img src={props.image_url} alt="" />
+        </Link>
         <div>
             <h2>{props.name}</h2>
             <div>{props.tagline}</div>

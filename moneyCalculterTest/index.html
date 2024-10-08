@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./src/main.ts"></script>
+    <link rel="stylesheet" href="./src/index.css">
+    <title>Tag 13</title>
+</head>
+
+<body>
+    <form action="" id="form-element">
+        <h1>Give me money</h1>
+        <p>Rechnungsbetrag:</p>
+        <div>
+            <img src="img/icons8-geldbeutel-euro-40 1.png" alt="">
+            <input type="number" id="rechnung">
+        </div>
+        <p>Personenzahl:</p>
+        <div>
+            <img src="img/icons8-microsoft-people-48 1.png" alt="">
+            <input type="number" id="personen">
+        </div>
+        <select name="" id="serviceFee">
+            <option value="0">Wie war der Service?</option>
+            <option value="2">Schlecht: 2% Trinkgeld</option>
+            <option value="10">Mittel: 10% Trinkgeld</option>
+            <option value="20">Super: 20% Trinkgeld</option>
+        </select>
+        <button type="submit" id="submitButton">Berechne</button>
+        <p id="trinkgeld"></p>
+        <p id="gesamtsumme"></p>
+        <p id="ppp"></p>
+    </form>   
+</body>
